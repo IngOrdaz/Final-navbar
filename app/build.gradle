@@ -41,7 +41,7 @@ android {
 dependencies {
 
     //added firebase
-    implementation platform('com.google.firebase:firebase-bom:30.0.0')
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
     implementation 'com.google.firebase:firebase-database-ktx'
 
 
