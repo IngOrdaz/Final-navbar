@@ -6,4 +6,4 @@ class User (name:String,username:String, level:Int,points:Int, nextLevelPoints:I
     val level=level
     val points=points
     val nextLevelPoints=nextLevelPoints
-}
+} 
