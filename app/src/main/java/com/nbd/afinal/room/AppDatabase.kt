@@ -10,5 +10,5 @@ const val TABLE_WISHES="wishes"
     version = 1
     )
 abstract class AppDatabase: RoomDatabase() {
-    abstract fun userDao(): WishDao
+    abstract fun wishDao(): WishDao
 }

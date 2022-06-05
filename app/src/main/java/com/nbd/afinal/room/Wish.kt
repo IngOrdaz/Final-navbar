@@ -5,7 +5,7 @@ class Wish(
         product_name:String,
         product_price: Double,
         product_description:String,
-        product_cal:Double
+        product_cal: Double
         ) {
         val id:String=id
         val product_name:String=product_name
