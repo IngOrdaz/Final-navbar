@@ -22,10 +22,10 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(layoutInflater)
         val database= Firebase.database
         val myRef=database.reference
-        myRef.child("usuarios").child("1").setValue(User("Ignacio","naarsee",4,239,115))
-        myRef.child("usuarios").child("2").setValue(User("Bere","killy",5,23,215))
-        myRef.child("usuarios").child("3").setValue(User("Yuni","yun909",4,39,159))
-        myRef.child("usuarios").child("4").setValue(User("Alex","naarsee",4,239,115))
+//        myRef.child("usuarios").child("1").setValue(User("Ignacio","naarsee",4,239,115))
+//        myRef.child("usuarios").child("2").setValue(User("Bere","killy",5,23,215))
+//        myRef.child("usuarios").child("3").setValue(User("Yuni","yun909",4,39,159))
+//        myRef.child("usuarios").child("4").setValue(User("Alex","naarsee",4,239,115))
 
         myRef.child("usuarios").child("2").get().addOnSuccessListener { response->
             Log.d("fireResponse",response.value.toString())

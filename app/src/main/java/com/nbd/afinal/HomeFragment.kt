@@ -78,10 +78,14 @@ class HomeFragment : Fragment() {
         return binding.root
     }
     fun getProductInfo(numberId:Int){
-        val url="https://fakestoreapi.com/products/${numberId}"
+
+        Log.i("storeResponse", numberId.toString())
+        val url="https://pokeapi.co/api/v2/pokemon/${numberId}"
 
         val jsonRequest=JsonObjectRequest(url, Response.Listener<JSONObject>{ response ->
             Log.i("storeResponse", response.toString())
+            binding.tvName.setText(response.getString("name"))
+            binding.tvPrice.setText(response.getString("name"))
         },
         Response.ErrorListener { error ->
             Log.w("storeResponse", error.message as String)

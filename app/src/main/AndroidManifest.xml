@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nbd.afinal">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".room.MyApplication"
         android:allowBackup="true"
