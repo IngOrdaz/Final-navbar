@@ -17,6 +17,7 @@ import com.nbd.afinal.databinding.FragmentHomeBinding
 import com.nbd.afinal.room.MainViewModel
 import com.nbd.afinal.room.Wish
 import org.json.JSONObject
+import java.util.Random
 
 class HomeFragment : Fragment() {
 
@@ -48,7 +49,27 @@ class HomeFragment : Fragment() {
 //       )
 
 
+        //save room
+        var calAlea=Random()
+        binding.btnWish.setOnClickListener {
 
+            var cal=calAlea.nextInt(4)*1.1;
+
+            mainViewModel.saveWish(Wish(
+//                id,
+//                product_name,
+//                product_price,
+//                product_description,
+//                product_cal
+                binding.etSearch.text.toString(),
+                binding.tvName.text.toString(),
+                binding.tvPrice.text.toString().toDouble(),
+                binding.tvDescription.text.toString(),
+                cal
+            ))
+        }
+
+        //show room
         mainViewModel.getWishes()
         //fragment viewLifecycleOwner en vez de this
         mainViewModel.savedWishes.observe(viewLifecycleOwner,{wishesLit ->
@@ -60,32 +81,39 @@ class HomeFragment : Fragment() {
                 Log.d("roomResponse","null or empty")
             }
         })
+
+
         //ROOM
 
         //Volley
 
         queue= Volley.newRequestQueue(context)
 
+
+
+
+        //Volley
+
+        //recep´cion de parametro para busqueda
         binding.btnSearch.setOnClickListener {
             var numberId=binding.etSearch.text.toString().toInt()
             getProductInfo(numberId)
         }
-
-
-        //Volley
         val navController=findNavController()
         val destination=HomeFragmentDirections.actionHomeFragmentToProfileFragment( )
         return binding.root
     }
     fun getProductInfo(numberId:Int){
 
+
         Log.i("storeResponse", numberId.toString())
-        val url="https://pokeapi.co/api/v2/pokemon/${numberId}"
+        val url="https://fakestoreapi.com/products/${numberId}"
 
         val jsonRequest=JsonObjectRequest(url, Response.Listener<JSONObject>{ response ->
             Log.i("storeResponse", response.toString())
-            binding.tvName.setText(response.getString("name"))
-            binding.tvPrice.setText(response.getString("name"))
+            binding.tvName.setText(response.getString("title"))
+            binding.tvPrice.setText(response.getString("price"))
+            binding.tvDescription.setText(response.getString("description"))
         },
         Response.ErrorListener { error ->
             Log.w("storeResponse", error.message as String)

@@ -27,7 +27,7 @@ class ProfileFragment : Fragment() {
 //        myRef.child("usuarios").child("3").setValue(User("Yuni","yun909",4,39,159))
 //        myRef.child("usuarios").child("4").setValue(User("Alex","naarsee",4,239,115))
 
-        myRef.child("usuarios").child("2").get().addOnSuccessListener { response->
+        myRef.child("usuarios").child("3").get().addOnSuccessListener { response->
             Log.d("fireResponse",response.value.toString())
             val jsonObject=JSONObject(response.value.toString())
             binding.tvName.setText(jsonObject.getString("name"))
