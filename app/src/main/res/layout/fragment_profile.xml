@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="Username"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintLeft_toLeftOf="@+id/tvName"
+        app:layout_constraintBottom_toTopOf="@+id/tvLevel"
+        />
+
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Nivel:"
+        app:layout_constraintLeft_toLeftOf="@+id/tvUsername"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
+        />
+    <TextView
+        android:id="@+id/tvLevelNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tvLevel"
+        app:layout_constraintTop_toTopOf="@+id/tvLevel"
+        android:text="4"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tvPointNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="119"
+        app:layout_constraintLeft_toRightOf="@+id/tvLevelNumber"
+        app:layout_constraintTop_toTopOf="@+id/tvLevelNumber"
+        android:layout_marginLeft="15dp"
+        />
+    <TextView
+        android:id="@+id/tvPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tvPointNumber"
+        app:layout_constraintTop_toTopOf="@+id/tvPointNumber"
+        android:text="puntos"
+        android:textSize="18sp"
+        android:layout_marginLeft="4dp"
+        />
+    <TextView
+        android:id="@+id/tvPointNumberNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="211"
+        app:layout_constraintLeft_toRightOf="@+id/tvPoints"
+        app:layout_constraintTop_toTopOf="@+id/tvPoints"
+        android:layout_marginLeft="15dp"
+        />
+    <TextView
+        android:id="@+id/tvPointsNexts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tvPointNumberNext"
+        app:layout_constraintTop_toTopOf="@+id/tvPointNumber"
+        android:text="sig nivel"
+        android:textSize="18sp"
+        android:layout_marginLeft="4dp"
+        />
+
+    <Button
+        android:id="@+id/btnList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:text="WishList"
+        app:layout_constraintLeft_toLeftOf="@id/tvLevel"
+        app:layout_constraintTop_toBottomOf="@id/tvLevel"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
