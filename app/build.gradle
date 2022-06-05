@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    //added
+    id 'com.google.gms.google-services'
+
 }
 
 android {
@@ -36,6 +39,12 @@ android {
 }
 
 dependencies {
+
+    //added firebase
+    implementation platform('com.google.firebase:firebase-bom:30.0.0')
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+
     //Navigation add by own
     def nav_version = "2.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
