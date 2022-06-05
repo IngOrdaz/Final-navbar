@@ -23,7 +23,7 @@ class ProfileFragment : Fragment() {
         val database= Firebase.database
         val myRef=database.reference
 
-        myRef.child("usuarios").child("3").get().addOnSuccessListener { response->
+        myRef.child("usuarios").child("2").get().addOnSuccessListener { response->
             Log.d("fireResponse",response.value.toString())
             val jsonObject=JSONObject(response.value.toString())
             binding.tvName.setText(jsonObject.getString("name"))
